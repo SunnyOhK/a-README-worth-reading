@@ -1,2 +1,1 @@
-# a-README-worth-reading
-A Professional README Generator (Node.js)
+https://www.tabnine.com/code/javascript/modules/inquirer
