@@ -17,4 +17,8 @@ function generateMarkdown(data) {
 `;
 }
 
+
+const generateMarkdown = ({ title, username, deployedURL, license, what, why, installation, usage, includeImg, contributing, authors, acknowledgment })
+
+
 module.exports = generateMarkdown;
