@@ -74,7 +74,7 @@ const promptUser = () => {
             type: 'list',
             name: 'license',
             message: 'Which type of license are you using?',
-            choices: ['MIT', 'Apache', 'GPLv2', 'GPLv3', 'LGPLv3', 'AGPLv3', 'Mozilla', 'Unlicense', 'Eclipse', 'IBM', 'ISC', 'other/none']
+            choices: ['MIT', 'GNU AGPLv3', 'GNU GPLv3', 'GNU LGPLv3', 'Mozilla 2.0', 'Apache 2.0', 'Boost Software', 'The Unlicense', 'other/none']
         },
         {
             type: 'input',
