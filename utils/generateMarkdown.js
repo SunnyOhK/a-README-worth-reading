@@ -3,64 +3,94 @@
 // USE SWITCH STATEMENT TO FIND A MATCH FOR THE USER'S SELECTED BADGE - I ASKED CHAT GPT TO GIVE ME A DEFINITION: "The switch statement is often used as a more concise alternative to a long chain of if-else statements, especially when you need to compare the value of a single variable against multiple possible values."
 // https://img.shields.io/badge/<LABEL>-<MESSAGE>-<COLOR>
 // https://img.shields.io/static/v1?label=<LABEL>&message=<MESSAGE>&color=<COLOR>
-
-function renderLicenseBadge(license) {
+'', '', '', '', '', '', '', '', 'other/none'
+function renderBadge(license) {
   let badge;
 
   switch (license) {
     case 'MIT':
       badge = { name: 'MIT', color: 'yellow' };
       break;
-    case 'Apache':
-      badge = { name: '', color: '' };
+    case 'Apache 2.0':
+      badge = { name: 'Apache_2.0', color: 'blue' };
       break;
-    case 'GPLv2':
-      badge = { name: '', color: '' };
+    case 'GNU GPLv3':
+      badge = { name: 'GPL_v3', color: 'blue' };
       break;
-    case 'GPLv3':
-      badge = { name: '', color: '' };
+    case 'GNU AGPLv3':
+      badge = { name: 'AGPL_v3', color: 'red' };
       break;
-    case 'LGPLv3':
-      badge = { name: '', color: '' };
+    case 'GNU LGPLv3':
+      badge = { name: 'LGPL_v3', color: 'blue' };
       break;
-    case 'AGPLv3':
-      badge = { name: '', color: '' };
+    case 'Mozilla 2.0':
+      badge = { name: 'MPL_2.0', color: 'brightgreen' };
       break;
-    case 'Mozilla':
-      badge = { name: '', color: '' };
+    case 'The Unlicense':
+      badge = { name: 'Unlicense', color: 'blue' };
       break;
-    case 'Unlicense':
-      badge = { name: '', color: '' };
+    case 'Boost Software':
+      badge = { name: 'Boost_1.0', color: 'lightblue' };
       break;
-    case 'Eclipse':
-      badge = { name: '', color: '' };
-      break;
-    case 'IBM':
-      badge = { name: '', color: '' };
-      break;
-    case 'ISC':
-      badge = { name: '', color: '' };
-      break;
+
 // DEFAULT NULL LICENSE VALUE
-    default: 'other/none'
-      break;
+    default:
+      return '';
   }
+
+  return `https://img.shields.io/badge/license-${badge.name}-${badge.color}`;
 }
 
-return ``
 
 // TODO: Create a function that returns the license link
 // If there is no license, return an empty string
-function renderLicenseLink(license) {}
+// Using open source licenses from https://choosealicense.com/
+function renderLink(license) {
+  let key;
+
+  switch (license) {
+    case 'MIT':
+      key = 'mit';
+      break;
+    case 'Apache 2.0':
+      key = 'apache-2.0';
+      break;
+    case 'GNU GPLv3':
+      key = 'gpl-3.0';
+      break;
+    case 'GNU AGPLv3':
+      key = 'agpl-3.0';
+      break;
+    case 'GNU LGPLv3':
+      key = 'lgpl-3.0';
+      break;
+    case 'Mozilla 2.0':
+      key = 'mpl-2.0';
+      break;
+    case 'The Unlicense':
+      key = 'unlicense';
+      break;
+    case 'Boost Software':
+      key = 'bsl-1.0';
+      break;
+
+    default:
+      return '';
+  }
+
+  return `https://choosealicense.com/licenses/${key}`
+}
 
 // TODO: Create a function that returns the license section of README
 // If there is no license, return an empty string
-function renderLicenseSection(license) {}
+function renderLicenseMD(license) {
+  var licenseBadge = ;
+  var licenseLink = ;
+}
 
 // TODO: Create a function to generate markdown for README
 function generateMarkdown(data) {
   return `# ${data.title}
-
 `;
 }
 
