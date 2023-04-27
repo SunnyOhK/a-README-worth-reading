@@ -3,7 +3,7 @@
 // USE SWITCH STATEMENT TO FIND A MATCH FOR THE USER'S SELECTED BADGE - I ASKED CHAT GPT TO GIVE ME A DEFINITION: "The switch statement is often used as a more concise alternative to a long chain of if-else statements, especially when you need to compare the value of a single variable against multiple possible values."
 // https://img.shields.io/badge/<LABEL>-<MESSAGE>-<COLOR>
 // https://img.shields.io/static/v1?label=<LABEL>&message=<MESSAGE>&color=<COLOR>
-'', '', '', '', '', '', '', '', 'other/none'
+// '', '', '', '', '', '', '', '', 'other/none'
 function renderBadge(license) {
   let badge;
 
@@ -38,7 +38,7 @@ function renderBadge(license) {
       return '';
   }
 
-  return `https://img.shields.io/badge/license-${badge.name}-${badge.color}`;
+  return `\n\nhttps://img.shields.io/badge/license-${badge.name}-${badge.color}`;
 }
 
 
@@ -81,21 +81,77 @@ function renderLink(license) {
   return `https://choosealicense.com/licenses/${key}`
 }
 
+
 // TODO: Create a function that returns the license section of README
 // If there is no license, return an empty string
 function renderLicenseMD(license) {
-  var licenseBadge = ;
-  var licenseLink = ;
+  if (license == "other/none"){
+    return ""
+  }
+  // var licenseBadge = ;
+  // var licenseLink = ;
+  return `\n\n##License${renderBadge(license)} \n${renderLink(license)}\nThis project is licensed under: ${ license }`
+
+}
+function renderLicenseTOB(license){
+  if (license == "other/none") {
+    return ""
+  }
+  return `\n- [License](#license)
+`
 }
 
 // TODO: Create a function to generate markdown for README
 function generateMarkdown(data) {
-  return `# ${data.title}
+  var install = data.install.replace(/^/gi, '\n-');
+
+  return `# ${data.title}${renderBadge(data.license)}
+
+## Description
+${data.description}
+${data.what}
+${data.why}
+
+## Table of Contents
+
+- [Installation](#installation)
+- [Usage](#usage)
+- [Credits](#credits)${renderLicenseTOB(data.license)}
+- [Badges](#badges)
+- [How to Contribute](#how-to-contribute)
+
+
+## Installation
+
+${install}
+
+## Usage
+
+You can find the live application here: ${deployedURL}
+
+${usage}
+${includeImg}
+
+## Credits
+
+- ${authors}
+
+- ${acknowledge}
+${renderLicenseMD(data.license)}
+## Badges
+
+![badmath](https://img.shields.io/github/languages/top/lernantino/badmath)
+
+
+## How to Contribute
+
+[![Contributor Covenant](https://img.shields.io/badge/Contributor%20Covenant-2.1-4baaaa.svg)](code_of_conduct.md)
+
+
+https://img.shields.io/badge/licence-${license}-blue
+
+.. |Contributor Covenant| image:: https://img.shields.io/badge/Contributor%20Covenant-2.1-4baaaa.svg :target: code_of_conduct.md
 `;
 }
-
-
-const generateMarkdown = ({ title, username, deployedURL, license, what, why, installation, usage, includeImg, contributing, authors, acknowledgment })
-
 
 module.exports = generateMarkdown;

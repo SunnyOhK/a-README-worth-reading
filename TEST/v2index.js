@@ -227,3 +227,18 @@ inquirer
 
 // // Function call to initialize app
 // init();
+
+    class InputQuestion {
+        constructor(name,message){
+            this.type = "input"
+            this.name = name,
+            this.message = message
+        }
+        validate (value) {
+            if(!value){
+                console.log('Please provide your response!');
+                return false;
+            }
+            return true
+        }
+    }

@@ -2,12 +2,12 @@ const inquirer = require('inquirer');
 
 // MINI PROJECT BONUS: promises module as an alternative to using callbacks with file system methods.
 const fs = require('fs');
-const util = require('util');
+// const utils = require('utils');
 const { writeFile } = fs.promises;
 
 
 // USE THE PROVIDED FILE IN /UTILS TO CREATE THE MARKDOWN FILE
-const generateMarkdown = require('utils/generateMarkdown.js');
+const generateMarkdown = require('./utils/generateMarkdown.js');
 
 
 // PROMPT AND ARRAY OF QUESTIONS IN ORDER TO GENERATE THE ELEMENTS REQUIRED TO BUILD A README DOC
