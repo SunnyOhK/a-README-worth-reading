@@ -86,7 +86,7 @@ function renderLink(license) {
 // If there is no license, return an empty string
 function renderLicenseMD(license) {
 
-  return `\n ${renderBadge(license)} \n${renderLink(license)}\n This project is licensed under: ${ license }`
+  return `\n ${renderBadge(license)} \n${renderLink(license)}\nThis project is licensed under: ${ license }`
 }
 
 // function renderLicenseToMD(license){
@@ -105,11 +105,11 @@ function generateMarkdown(data) {
   var credits = data.credits.replace(/^/gi, '\n- ');
   var contributing = data.contributing.replace(/^/gi, '\n- ');
   var tests = data.tests.replace(/^/gi, '\n- ');
-  var img = `<img src="${data.img}><br>"`;
+  var img = `<img src=${data.img}><br>`;
 
   console.log(img);
 
-return `#${data.title}
+return `# ${data.title}
 
 ## Description
 ${data.description}
@@ -126,7 +126,7 @@ ${data.description}
 
 ## Installation
 
-You can visit the <b>${data.title}</b> live web application at: ${data.deployedURL}
+You can visit the ${data.title} live web application at: ${data.deployedURL}
 
 ${install}
 
@@ -154,9 +154,8 @@ ${credits}
 ## Contact
 
 For questions or learn how you may contribute to this project, please contact me:\n
-###${data.name}\n
-###Project Link: 
-https://github.com/${data.username}/${data.repo}
+### ${data.name}\n
+### Project Link: https://github.com/${data.username}/${data.repo}
 `
 }
 
