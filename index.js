@@ -2,18 +2,18 @@ const inquirer = require('inquirer');
 
 // MINI PROJECT BONUS: promises module as an alternative to using callbacks with file system methods.
 const fs = require('fs');
-const util = require('util');
+// const utils = require('utils');
 const { writeFile } = fs.promises;
 
 
 // USE THE PROVIDED FILE IN /UTILS TO CREATE THE MARKDOWN FILE
-const generateMarkdown = require('utils/generateMarkdown.js');
+const generateMarkdown = require('./utils/generateMarkdown');
 
 
 // PROMPT AND ARRAY OF QUESTIONS IN ORDER TO GENERATE THE ELEMENTS REQUIRED TO BUILD A README DOC
 const promptUser = () => {
 
-    const instructions = `\nWelcome to "A README.md Worth Reading."\n - You will be prompted to answer a series of questions, and our command line generator will take care of the rest!\n - Please answer all questions in plain text. Any required syntax or formatting will be auto-generated for you.\n - Questions marked with ** require a response; all others may be skipped by pressing "enter."\n - For listed responses, you may separate list items with the ^ symbol to generate a new line item in the bulleted list (ex. name1 - repo1 ^ name2 - repo2)\n\n`;
+    const instructions = `\nWelcome to "A README.md Worth Reading."\n - You will be prompted to answer a series of questions, and our command line generator will take care of the rest!\n - Please answer all questions in plain text. Any required syntax or formatting will be auto-generated for you.\n - Questions marked with ** require a response; all others may be skipped by pressing "enter."\n - For listed responses in select sections (installation, usage, collaborators, & resource acknowledgments), you may separate list items with the ^ symbol to generate a new line item in the bulleted list (ex. name1 - repo1 ^ name2 - repo2)\n\n`;
 
     console.log(instructions);
 
@@ -22,6 +22,19 @@ const promptUser = () => {
             type: 'input',
             name: 'title',
             message: '** What is the title of your project? (no formatting or special syntax required)',
+            validate: function (value) {
+                if (!value) {
+                    console.log('Please provide your response!');
+                    return false;
+                } else {
+                    return true;
+                }
+            }
+        },
+        {
+            type: 'input',
+            name: 'name',
+            message: '** What is your name (first last)?',
             validate: function (value) {
                 if (!value) {
                     console.log('Please provide your response!');
@@ -134,19 +147,6 @@ const promptUser = () => {
             message: 'Please include the filepath or URL for any relevant images.'
         },
         {
-            type: 'confirm',
-            name: 'contributing',
-            message: '** Would you like to make your project open source for collaborators to contribute?',
-            validate: function (value) {
-                if (!value) {
-                    console.log('Please provide your response!');
-                    return false;
-                } else {
-                    return true;
-                }
-            }
-        },
-        {
             type: 'input',
             name: 'authors',
             message: 'Please list any developers with whom you collaborated on this project.'
@@ -156,7 +156,8 @@ const promptUser = () => {
             name: 'acknowledge',
             message: 'Please list relevant resources (YouTube, GitHub repositories, etc.) that assisted in the creation of this project.'
         },
-    ]);
+    ])
+    
 };
 
 
@@ -164,8 +165,8 @@ const promptUser = () => {
 const init = () => {
     promptUser()
         // Use writeFile method imported from fs.promises to use promises instead of a callback function
-        .then((answers) => writeFile('README.md', generateMarkdown(answers)))
-        .then(() => console.log('Successfully wrote README.md file!'))
+        .then((data) => writeFile('README.md', generateMarkdown(data)))
+        .then(() => console.log('README.md file generation successful!'))
         .catch((err) => console.error(err));
 };
 
