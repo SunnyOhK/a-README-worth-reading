@@ -100,14 +100,12 @@ function renderLicenseMD(license) {
 
 // TODO: Create a function to generate markdown for README
 function generateMarkdown(data) {
-  var install = data.install.replace(/^/gi, '\n- ');
-  var usage = data.usage.replace(/^/gi, '\n- ');
-  var credits = data.credits.replace(/^/gi, '\n- ');
-  var contributing = data.contributing.replace(/^/gi, '\n- ');
-  var tests = data.tests.replace(/^/gi, '\n- ');
-  var img = `<img src=${data.img}><br>`;
-
-  console.log(img);
+  var install = data.install.replace(/\^/g, '\n- ');
+  var usage = data.usage.replace(/\^/g, '\n- ');
+  var credits = data.credits.replace(/\^/g, '\n- ');
+  var contributing = data.contributing.replace(/\^/g, '\n- ');
+  var tests = data.tests.replace(/\^/g, '\n- ');
+  var img = data.img.replace(/~~~/g, '\n<img src=${data.img}>');
 
 return `# ${data.title}
 
