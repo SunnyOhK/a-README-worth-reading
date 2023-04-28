@@ -4,10 +4,10 @@
 // https://img.shields.io/badge/<LABEL>-<MESSAGE>-<COLOR>
 // https://img.shields.io/static/v1?label=<LABEL>&message=<MESSAGE>&color=<COLOR>
 // '', '', '', '', '', '', '', '', 'other/none'
-function renderBadge(license) {
+function renderBadge() {
   let badge;
 
-  switch (license) {
+  switch (data.license) {
     case 'MIT':
       badge = { name: 'MIT', color: 'yellow' };
       break;
@@ -38,17 +38,18 @@ function renderBadge(license) {
       return '';
   }
 
-  return `\n\n![License]https://img.shields.io/badge/license-${badge.name}-${badge.color}`;
+// THIS RETURNS VAR BADGE  
+  const badgeURL = `(https://img.shields.io/badge/License-${badge.name}-${badge.color}.svg)`;
+  return `\n![License](${badgeURL})`;
 }
 
 
 // TODO: Create a function that returns the license link
 // If there is no license, return an empty string
 // Using open source licenses from https://choosealicense.com/
-function renderLink(license) {
-  let key;
+function renderLicense() {
 
-  switch (license) {
+  switch (data.license) {
     case 'MIT':
       key = 'mit';
       break;
@@ -78,28 +79,23 @@ function renderLink(license) {
       return '';
   }
 
-  return `https://choosealicense.com/licenses/${key}`
+  const license = `https://choosealicense.com/licenses/${key}`
+  return license;
 }
 
 
 // TODO: Create a function that returns the license section of README
 // If there is no license, return an empty string
-function renderLicenseMD(license) {
-
-  return `\n ${renderBadge(license)} \n${renderLink(license)}\nThis project is licensed under: ${ license }`
+function renderLicenseMD() {
+  var licenseBadge = `[![License]${badge}](${license}`
+  var licenseMD = `This project is licensed under: ${badge.name}`
 }
 
-// function renderLicenseToMD(license){
-//   if (license == "other/none") {
-//     return ""
-//   }
-
-//   return `\n - [License](#license)`
-// }
 
 
 // TODO: Create a function to generate markdown for README
 function generateMarkdown(data) {
+  var badgeMd = [![License: ](https://img.shields.io/badge/License-MPL_2.0-brightgreen.svg)](https://opensource.org/licenses/MPL-2.0)
   var install = data.install.replace(/\^/g, '\n- ');
   var usage = data.usage.replace(/\^/g, '\n- ');
   var credits = data.credits.replace(/\^/g, '\n- ');
