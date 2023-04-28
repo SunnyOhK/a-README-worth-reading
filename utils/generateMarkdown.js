@@ -38,7 +38,7 @@ function renderBadge(license) {
       return '';
   }
 
-  return `\n\nhttps://img.shields.io/badge/license-${badge.name}-${badge.color}`;
+  return `\n\n[![License]https://img.shields.io/badge/license-${badge.name}-${badge.color}`;
 }
 
 
@@ -85,75 +85,76 @@ function renderLink(license) {
 // TODO: Create a function that returns the license section of README
 // If there is no license, return an empty string
 function renderLicenseMD(license) {
-  if (license == "other/none"){
-    return ""
-  }
 
   return `\n\n##License${renderBadge(license)} \n${renderLink(license)}\nThis project is licensed under: ${ license }`
 }
 
-function renderLicenseTOC(license){
-  if (license == "other/none") {
-    return ""
-  }
+// function renderLicenseToMD(license){
+//   if (license == "other/none") {
+//     return ""
+//   }
 
-  return `\n - [License](#license)`
-}
+//   return `\n - [License](#license)`
+// }
 
 
 // TODO: Create a function to generate markdown for README
 function generateMarkdown(data) {
-  var install = data.install.replace(/^/gi, '\n-');
-  var usage = data.usage.replace(/^/gi, '\n-');
-  var authors = data.authors.replace(/^/gi, '\n-');
-  var acknowledge = data.acknowledge.replace(/^/gi, '\n-');
-
-  var authorsSection = '';
-    if (authors) {
-      authorsSection = `\n\n##Authors \n\n${authors}`;
-    }
-
-  var acknowledgeSection = '';
-    if (acknowledge) {
-      acknowledgeSection = `\n\n##Acknowledgments \n\n${acknowledge}`;
-    }
+  var install = data.install.replace(/^/gi, '\n- ');
+  var usage = data.usage.replace(/^/gi, '\n- ');
+  var credits = data.credits.replace(/^/gi, '\n- ');
+  var contributing = data.contributing.replace(/^/gi, '\n- ');
+  var tests = data.tests.replace(/^/gi, '\n- ');
 
 return `
-# ${data.title}${renderBadge(data.license)}
+#${data.title}
 
 ## Description
-
-${data.description} \n
-${data.what} \n
-${data.why} \n
+${data.description}
 
 ## Table of Contents
 
 - [Installation](#installation)
 - [Usage](#usage)
-- [Authors](#authors)
-- [Acknowledgements](#acknowledgements)${ renderLicenseTOB(data.license) }
+- [License](#license)
+- [Contributing](#contributing)
+- [Tests](#tests)
+- [Credits](#credits)
 - [Contact](#contact)
-
 
 ## Installation
 
-You can visit the ${data.title} live web application at: ${data.deployedURL}
+You can visit the <b>${data.title}</b> live web application at: ${data.deployedURL}
 
 ${install}
-
 
 ## Usage
 
 ${usage}
 ${data.includeImg}
 
+## License
+
+${ renderLicenseMD(data.license) }
+
+## Contributing
+
+${contributing}
+
+## Tests
+
+${tests}
+
+## Credits
+
+${credits}
 
 ## Contact
 
-For questions or learn how you may contribute to this project, please contact me:
-${data.name}
-Project Link: https://github.com/${data.username}/${data.repo}
+For questions or learn how you may contribute to this project, please contact me:\n
+###${data.name}\n
+###Project Link: 
+https://github.com/${data.username}/${data.repo}
 `
 }
 
