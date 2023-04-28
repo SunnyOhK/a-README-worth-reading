@@ -88,70 +88,73 @@ function renderLicenseMD(license) {
   if (license == "other/none"){
     return ""
   }
-  // var licenseBadge = ;
-  // var licenseLink = ;
-  return `\n\n##License${renderBadge(license)} \n${renderLink(license)}\nThis project is licensed under: ${ license }`
 
+  return `\n\n##License${renderBadge(license)} \n${renderLink(license)}\nThis project is licensed under: ${ license }`
 }
-function renderLicenseTOB(license){
+
+function renderLicenseTOC(license){
   if (license == "other/none") {
     return ""
   }
-  return `\n- [License](#license)
-`
+
+  return `\n - [License](#license)`
 }
+
 
 // TODO: Create a function to generate markdown for README
 function generateMarkdown(data) {
   var install = data.install.replace(/^/gi, '\n-');
+  var usage = data.usage.replace(/^/gi, '\n-');
+  var authors = data.authors.replace(/^/gi, '\n-');
+  var acknowledge = data.acknowledge.replace(/^/gi, '\n-');
 
-  return `# ${data.title}${renderBadge(data.license)}
+  var authorsSection = '';
+    if (authors) {
+      authorsSection = `\n\n##Authors \n\n${authors}`;
+    }
+
+  var acknowledgeSection = '';
+    if (acknowledge) {
+      acknowledgeSection = `\n\n##Acknowledgments \n\n${acknowledge}`;
+    }
+
+return `
+# ${data.title}${renderBadge(data.license)}
 
 ## Description
-${data.description}
-${data.what}
-${data.why}
+
+${data.description} \n
+${data.what} \n
+${data.why} \n
 
 ## Table of Contents
 
 - [Installation](#installation)
 - [Usage](#usage)
-- [Credits](#credits)${renderLicenseTOB(data.license)}
-- [Badges](#badges)
-- [How to Contribute](#how-to-contribute)
+- [Authors](#authors)
+- [Acknowledgements](#acknowledgements)${ renderLicenseTOB(data.license) }
+- [Contact](#contact)
 
 
 ## Installation
 
+You can visit the ${data.title} live web application at: ${data.deployedURL}
+
 ${install}
+
 
 ## Usage
 
-You can find the live application here: ${deployedURL}
-
 ${usage}
-${includeImg}
-
-## Credits
-
-- ${authors}
-
-- ${acknowledge}
-${renderLicenseMD(data.license)}
-## Badges
-
-![badmath](https://img.shields.io/github/languages/top/lernantino/badmath)
+${data.includeImg}
 
 
-## How to Contribute
+## Contact
 
-[![Contributor Covenant](https://img.shields.io/badge/Contributor%20Covenant-2.1-4baaaa.svg)](code_of_conduct.md)
-
-
-https://img.shields.io/badge/licence-${license}-blue
-
-.. |Contributor Covenant| image:: https://img.shields.io/badge/Contributor%20Covenant-2.1-4baaaa.svg :target: code_of_conduct.md
-`;
+For questions or learn how you may contribute to this project, please contact me:
+${data.name}
+Project Link: https://github.com/${data.username}/${data.repo}
+`
 }
 
 module.exports = generateMarkdown;
