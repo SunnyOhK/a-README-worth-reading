@@ -13,7 +13,7 @@ const generateMarkdown = require('./utils/generateMarkdown.js');
 // PROMPT AND ARRAY OF QUESTIONS IN ORDER TO GENERATE THE ELEMENTS REQUIRED TO BUILD A README DOC
 const promptUser = () => {
 
-    const instructions = `\nWelcome to "A README.md Worth Reading."\n- You will be prompted to answer a series of questions, and our command line generator will take care of the rest!\n- If you would like to generate a bulleted list, use the ^ symbol to separate list items (ex. ^First step in instructions.^Second step in instructions.)\n\n`;
+    const instructions = `\nWelcome to "A README.md Worth Reading."\n- You will be prompted to answer a series of questions, and our command line generator will take care of the rest!\n- If you would like to generate a bulleted list, use the ^ symbol to separate list items (ex. Sentence^ First step in instructions.^ Second step in instructions.)\n\n`;
 
     console.log(instructions);
 
@@ -117,7 +117,7 @@ const promptUser = () => {
         },
         {
             type: 'input',
-            name: 'includeImg',
+            name: 'img',
             message: 'Please include the filepath or URL for any relevant images.',
         },
         {

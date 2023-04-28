@@ -38,7 +38,7 @@ function renderBadge(license) {
       return '';
   }
 
-  return `\n\n[![License]https://img.shields.io/badge/license-${badge.name}-${badge.color}`;
+  return `\n\n![License]https://img.shields.io/badge/license-${badge.name}-${badge.color}`;
 }
 
 
@@ -86,7 +86,7 @@ function renderLink(license) {
 // If there is no license, return an empty string
 function renderLicenseMD(license) {
 
-  return `\n\n##License${renderBadge(license)} \n${renderLink(license)}\nThis project is licensed under: ${ license }`
+  return `\n ${renderBadge(license)} \n${renderLink(license)}\n This project is licensed under: ${ license }`
 }
 
 // function renderLicenseToMD(license){
@@ -105,9 +105,11 @@ function generateMarkdown(data) {
   var credits = data.credits.replace(/^/gi, '\n- ');
   var contributing = data.contributing.replace(/^/gi, '\n- ');
   var tests = data.tests.replace(/^/gi, '\n- ');
+  var img = `<img src="${data.img}><br>"`;
 
-return `
-#${data.title}
+  console.log(img);
+
+return `#${data.title}
 
 ## Description
 ${data.description}
@@ -131,7 +133,7 @@ ${install}
 ## Usage
 
 ${usage}
-${data.includeImg}
+${img}
 
 ## License
 
