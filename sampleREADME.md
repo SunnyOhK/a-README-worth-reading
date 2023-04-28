@@ -1,7 +1,7 @@
-# Cool App
+# A Cool App
 
 ## Description
-It's really cool.
+It does things.
 
 ## Table of Contents
 
@@ -15,16 +15,21 @@ It's really cool.
 
 ## Installation
 
-You can visit the Cool App live web application at: www.coolapp.com
+You can visit the A Cool App live web application at: www.acoolapp.com
 
 
-- ^ thing one.^ thing two.^ other things.
+- Step 1 
+- Step 2 
+- Step 3
 
 ## Usage
 
 
-- It does cool things...^ It does this.^ And it does that.
-<img src=https://www.planetware.com/wpimages/2019/11/canada-in-pictures-beautiful-places-to-photograph-morraine-lake.jpg><br>
+- a 
+- b 
+- c
+https://www.bnf.fr/en/banque-dimages-picture-collection 
+<img src=${data.img}>  https://35photo.pro/photos_main/497/2489370.jpg
 
 ## License
 
@@ -33,27 +38,27 @@ You can visit the Cool App live web application at: www.coolapp.com
 
 ![License]https://img.shields.io/badge/license-MIT-yellow 
 https://choosealicense.com/licenses/mit
- This project is licensed under: MIT
+This project is licensed under: MIT
 
 ## Contributing
 
-
-- none
+Please contact me
 
 ## Tests
 
-
-- none
+None
 
 ## Credits
 
 
-- ^ Mom^ Jenny^ Finn
+- Person 1 
+- Person 2 
+- YouTube
 
 ## Contact
 
 For questions or learn how you may contribute to this project, please contact me:
 
-### Sunny Ovson
+### SunnyOhK
 
-### Project Link: https://github.com/undefined/cool-appy-app
+### Project Link: https://github.com/undefined/a-cool-app
