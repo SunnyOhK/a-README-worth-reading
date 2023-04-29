@@ -4,106 +4,69 @@
 // https://img.shields.io/badge/<LABEL>-<MESSAGE>-<COLOR>
 // https://img.shields.io/static/v1?label=<LABEL>&message=<MESSAGE>&color=<COLOR>
 // '', '', '', '', '', '', '', '', 'other/none'
-function renderBadge() {
+function renderBadge(data) {
   let badge;
 
   switch (data.license) {
     case 'MIT':
-      badge = { name: 'MIT', color: 'yellow' };
+      badge = '[![License](https://img.shields.io/badge/License-MIT-yellow.svg)](https://choosealicense.com/licenses/mit)';
       break;
     case 'Apache 2.0':
-      badge = { name: 'Apache_2.0', color: 'blue' };
+      badge = '[![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](https://choosealicense.com/licenses/apache-2.0)';
       break;
     case 'GNU GPLv3':
-      badge = { name: 'GPL_v3', color: 'blue' };
+      badge = '[![License](https://img.shields.io/badge/License-GPL_v3-blue.svg)](https://choosealicense.com/licenses/gpl-3.0)';
       break;
     case 'GNU AGPLv3':
-      badge = { name: 'AGPL_v3', color: 'red' };
+      badge = '[![License](https://img.shields.io/badge/License-AGPL_v3-red.svg)](https://choosealicense.com/licenses/agpl-3.0)';
       break;
     case 'GNU LGPLv3':
-      badge = { name: 'LGPL_v3', color: 'blue' };
+      badge = '[![License](https://img.shields.io/badge/License-LGPL_v3-blue.svg)](https://choosealicense.com/licenses/lgpl-3.0)';
       break;
     case 'Mozilla 2.0':
-      badge = { name: 'MPL_2.0', color: 'brightgreen' };
+      badge = '[![License](https://img.shields.io/badge/License-MPL_2.0-brightgreen.svg)](https://choosealicense.com/licenses/mpl-2.0)';
       break;
     case 'The Unlicense':
-      badge = { name: 'Unlicense', color: 'blue' };
+      badge = '[![License](https://img.shields.io/badge/License-Unlicense-blue.svg)](https://choosealicense.com/licenses/unlicense)';
       break;
     case 'Boost Software':
-      badge = { name: 'Boost_1.0', color: 'lightblue' };
+      badge = '[![License](https://img.shields.io/badge/License-Boost_1.0-lightblue.svg)](https://choosealicense.com/licenses/bsl-1.0)';
       break;
-
-// DEFAULT NULL LICENSE VALUE
     default:
-      return '';
+      badge = '';
   }
-
-// THIS RETURNS VAR BADGE  
-  const badgeURL = `(https://img.shields.io/badge/License-${badge.name}-${badge.color}.svg)`;
-  return `\n![License](${badgeURL})`;
+  return badge;
 }
 
-
-// TODO: Create a function that returns the license link
-// If there is no license, return an empty string
-// Using open source licenses from https://choosealicense.com/
-function renderLicense() {
-
-  switch (data.license) {
-    case 'MIT':
-      key = 'mit';
-      break;
-    case 'Apache 2.0':
-      key = 'apache-2.0';
-      break;
-    case 'GNU GPLv3':
-      key = 'gpl-3.0';
-      break;
-    case 'GNU AGPLv3':
-      key = 'agpl-3.0';
-      break;
-    case 'GNU LGPLv3':
-      key = 'lgpl-3.0';
-      break;
-    case 'Mozilla 2.0':
-      key = 'mpl-2.0';
-      break;
-    case 'The Unlicense':
-      key = 'unlicense';
-      break;
-    case 'Boost Software':
-      key = 'bsl-1.0';
-      break;
-
-    default:
-      return '';
-  }
-
-  const license = `https://choosealicense.com/licenses/${key}`
-  return license;
-}
 
 
 // TODO: Create a function that returns the license section of README
 // If there is no license, return an empty string
 function renderLicenseMD() {
-  var licenseBadge = `[![License]${badge}](${license}`
-  var licenseMD = `This project is licensed under: ${badge.name}`
+  if (license) {
+    licenseMd = 'This product is licensed under:'
+  } else {
+    licenseMd = ''
+  }
+
+  return licenseMd;
 }
 
 
 
 // TODO: Create a function to generate markdown for README
 function generateMarkdown(data) {
-  var badgeMd = [![License: ](https://img.shields.io/badge/License-MPL_2.0-brightgreen.svg)](https://opensource.org/licenses/MPL-2.0)
-  var install = data.install.replace(/\^/g, '\n- ');
-  var usage = data.usage.replace(/\^/g, '\n- ');
-  var credits = data.credits.replace(/\^/g, '\n- ');
-  var contributing = data.contributing.replace(/\^/g, '\n- ');
-  var tests = data.tests.replace(/\^/g, '\n- ');
-  var img = data.img.replace(/~~~/g, '\n<img src=${data.img}>');
+  var badges = renderBadge(data.license);
+  var install = data.install.replace(/^/g, '\n- ');
+  var usage = data.usage.replace(/^/g, '\n- ');
+  var credits = data.credits.replace(/^/g, '\n- ');
+  var contributing = data.contributing.replace(/^/g, '\n- ');
+  var tests = data.tests.replace(/^/g, '\n- ');
+  var img = data.img.replace(/~~/g, '\n<img src=${data.img}>');
 
-return `# ${data.title}
+  return `# ${data.title}
+
+${badges}
 
 ## Description
 ${data.description}
@@ -112,11 +75,11 @@ ${data.description}
 
 - [Installation](#installation)
 - [Usage](#usage)
-- [License](#license)
 - [Contributing](#contributing)
 - [Tests](#tests)
 - [Credits](#credits)
 - [Contact](#contact)
+- [License](#license)
 
 ## Installation
 
@@ -131,7 +94,6 @@ ${img}
 
 ## License
 
-${ renderLicenseMD(data.license) }
 
 ## Contributing
 
