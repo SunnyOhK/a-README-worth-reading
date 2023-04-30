@@ -13,7 +13,7 @@ const generateMarkdown = require('./utils/generateMarkdown.js');
 // PROMPT AND ARRAY OF QUESTIONS IN ORDER TO GENERATE THE ELEMENTS REQUIRED TO BUILD A README DOC
 const promptUser = () => {
 
-    const instructions = `\nWelcome to "A README.md Worth Reading."\n- You will be prompted to answer a series of questions, and our command line generator will take care of the rest!\n- If you would like to generate a bulleted list, use the ~~ symbols before each list item (ex. Sentence. ~~First step in instructions. ~~Second step in instructions.)\n- If you would like to include an image, please enclose the url or filepath in () (ex. (www.photo.com)\n`;
+    const instructions = `\nWelcome to "A README.md Worth Reading."\n- You will be prompted to answer a series of questions, and our command line generator will take care of the rest!\n- If you would like to generate a bulleted list (accepting questions marked with ~ symbol), use the ~~ symbols before each list item (ex. Sentence. ~~First step in instructions. ~~Second step in instructions.)\n- If you would like to include an image, please enclose the url or filepath in () (ex. (www.photo.com)\n`;
 
     console.log(instructions);
 
@@ -34,7 +34,7 @@ const promptUser = () => {
         {
             type: 'input',
             name: 'name',
-            message: 'Please provide your full name OR your GitHub username.',
+            message: 'Please provide your GitHub username.',
             validate: function (value) {
                 if (!value) {
                     console.log('Response required.');
@@ -48,6 +48,19 @@ const promptUser = () => {
             type: 'input',
             name: 'repo',
             message: 'What is the name of your GitHub repository?',
+            validate: function (value) {
+                if (!value) {
+                    console.log('Response required.');
+                    return false;
+                } else {
+                    return true;
+                }
+            }
+        },
+        {
+            type: 'input',
+            name: 'email',
+            message: 'What is your email address?',
             validate: function (value) {
                 if (!value) {
                     console.log('Response required.');
@@ -92,7 +105,7 @@ const promptUser = () => {
         {
             type: 'input',
             name: 'install',
-            message: 'What are the steps required to install your application?',
+            message: '~ What are the steps required to install your application?',
             validate: function (value) {
                 if (!value) {
                     console.log('Response required.');
@@ -105,7 +118,7 @@ const promptUser = () => {
         {
             type: 'input',
             name: 'usage',
-            message: 'How does your application work? Provide detailed steps outlining navigation and functionality.',
+            message: '~ How does your application work? Provide detailed steps outlining navigation and functionality.',
             validate: function (value) {
                 if (!value) {
                     console.log('Response required.');
@@ -118,12 +131,12 @@ const promptUser = () => {
         {
             type: 'input',
             name: 'img',
-            message: 'Please include the filepath or URL for any relevant images.',
+            message: 'Please include the relative filepath or URL for an image. (optional)',
         },
         {
             type: 'input',
             name: 'credits',
-            message: 'Please list any collaborating authors or relevant resources contributed to the development of this project.',
+            message: '~ Please list any collaborating authors or relevant resources contributed to the development of this project.',
             validate: function (value) {
                 if (!value) {
                     console.log('Response required.');
@@ -136,7 +149,7 @@ const promptUser = () => {
         {
             type: 'input',
             name: 'contributing',
-            message: 'Please outline your contribution guidelines.',
+            message: '~ Please outline your contribution guidelines, OR to adopt Contributor Covenant, please simply write ACC .',
             validate: function (value) {
                 if (!value) {
                     console.log('Response required.');
@@ -149,7 +162,7 @@ const promptUser = () => {
         {
             type: 'input',
             name: 'tests',
-            message: 'Please outline test instructions.',
+            message: '~ Please outline test instructions.',
             validate: function (value) {
                 if (!value) {
                     console.log('Response required.');
@@ -168,7 +181,7 @@ const promptUser = () => {
 const init = () => {
     promptUser()
         // Use writeFile method imported from fs.promises to use promises instead of a callback function
-        .then((data) => writeFile('sampleREADME.md', generateMarkdown(data)))
+        .then((data) => writeFile('README.md', generateMarkdown(data)))
         .then(() => console.log('README.md file generation successful!'))
         .catch((err) => console.error(err));
 };
