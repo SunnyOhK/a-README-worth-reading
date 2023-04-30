@@ -84,7 +84,6 @@ function generateMarkdown(data) {
   var credits = data.credits.replace(/^/g, '\n- ');
   var contributing = data.contributing.replace(/^/g, '\n- ');
   var tests = data.tests.replace(/^/g, '\n- ');
-  // var break = data.img.replace(/~~/g, '\n');
   var imgTag = loadImg(data.img);
 
   return `# ${data.title}
@@ -118,6 +117,7 @@ ${imgTag}${data.img}
 
 ## Contributing
 
+[![Contributor Covenant](https://img.shields.io/badge/Contributor%20Covenant-2.1-4baaaa.svg)](code_of_conduct.md)
 ${contributing}
 
 ## Tests
