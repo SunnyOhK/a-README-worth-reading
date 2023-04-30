@@ -33,7 +33,8 @@ https://user-images.githubusercontent.com/127900916/235376758-2771097a-e5b6-4738
 ## Credits
 
 - Alex Gonzalez: EdX Tutor 
-- ChatGPT: explained how I could use the replace method to created bulleted lists for this application
+- ChatGPT: explained how I could use the replace(/char/g) method to created bulleted lists for this application
+- Inquirer: https://github.com/SBoudrias/Inquirer.js#readme
 
 ## License
 This project is licensed under: [MIT](https://choosealicense.com/licenses/mit/)
@@ -42,7 +43,10 @@ This project is licensed under: [MIT](https://choosealicense.com/licenses/mit/)
 
 For questions, please contact me:
 
-### GitHub: &nbsp;<small>[SunnyOhK](https://github.com/SunnyOhK)</small>
+### GitHub: 
+  #### [SunnyOhK](https://github.com/SunnyOhK)
 
-### Project Link: &nbsp;<small>https://github.com/SunnyOhK/a-README-worth-reading</small>
-### Email: &nbsp;<small>127900916+SunnyOhK@users.noreply.github.com</small>
+### Project Link: 
+  #### https://github.com/SunnyOhK/a-README-worth-reading
+### Email: 
+  #### 127900916+SunnyOhK@users.noreply.github.com
