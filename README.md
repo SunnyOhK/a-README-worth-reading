@@ -30,8 +30,7 @@ Once installation has been completed, creating your professional README.md is a 
 - Read the instructions to learn how to create bulleted lists and render an image. 
 - Follow all prompts and watch your README.md magically appear. 
 
-https://user-images.githubusercontent.com/127900916/235376574-8cfb0c7c-c2d3-459b-8486-c66be811806c.mp4
-
+https://drive.google.com/file/d/1vsFnjZIAg5e4AN_C0r4D5qYEYl-RfXHt/view
 
 ## Contributing
 
