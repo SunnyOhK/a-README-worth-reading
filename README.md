@@ -28,14 +28,8 @@ Once installation has been completed, creating your professional README.md is a 
 - Read the instructions to learn how to create bulleted lists and render an image. 
 - Follow all prompts and watch your README.md magically appear. 
 
-
-## Contributing
-
-[![Contributor Covenant](https://img.shields.io/badge/Contributor%20Covenant-2.1-4baaaa.svg)](code_of_conduct.md)
-
-## Tests
-
-Please contact me for more information.
+![video](/assets/project-demo.mp4)
+![sampleREADME](/assets/sampleREADME.md)
 
 ## Credits
 
