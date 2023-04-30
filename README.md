@@ -1,6 +1,6 @@
 # A README Worth Reading
 
-[![License](https://img.shields.io/badge/License-MIT-yellow.svg)](https://choosealicense.com/licenses/mit)
+[![License](https://img.shields.io/badge/License-MIT-yellow.svg)](https://choosealicense.com/licenses/mit) [![Inquirer](https://img.shields.io/badge/Inquirer-v8.2.4-red.svg)](https://github.com/SBoudrias/Inquirer.js#readme)
 
 ## Description
 This is a command-line based application that generates a professional README.md file based on a user’s input. It utilizes Node.js and the Inquirer NPM package to initiate a series of prompted questions and render the responses into a well-formatted markdown file.
@@ -9,15 +9,13 @@ This is a command-line based application that generates a professional README.md
 
 - [Installation](#installation)
 - [Usage](#usage)
-- [Contributing](#contributing)
-- [Tests](#tests)
 - [Credits](#credits)
-- [Contact](#contact)
 - [License](#license)
+- [Contact](#contact)
 
 ## Installation
 
-You can visit the A README Worth Reading live web application at: https://sunnyohk.github.io/a-README-worth-reading
+You can visit the A README Worth Reading GitHub Repository at: https://github.com/SunnyOhK/a-README-worth-reading
 
 This application uses version 8.2.4 of the Inquirer npm package. 
 - Open the terminal command line from the folder where you will be requiring a README.md and type: ‘npm install inquirer@^8.2.4’ 
@@ -30,8 +28,6 @@ Once installation has been completed, creating your professional README.md is a 
 - Read the instructions to learn how to create bulleted lists and render an image. 
 - Follow all prompts and watch your README.md magically appear. 
 
-![ScreenCapture](<src="https://drive.google.com/file/d/1vsFnjZIAg5e4AN_C0r4D5qYEYl-RfXHt/preview" width="640" height="480"></iframe>)
-
 
 ## Contributing
 
@@ -39,22 +35,25 @@ Once installation has been completed, creating your professional README.md is a 
 
 ## Tests
 
-Please contact me for test instructions.
+Please contact me for more information.
 
 ## Credits
 
-
 - Alex Gonzalez: EdX Tutor 
-- ChatGPT: explained how I could use the replace method to created bulleted lists for this application
+- ChatGPT: explained how I could use the replace(/char/g) method to created bulleted lists for this application
+- Inquirer: https://github.com/SBoudrias/Inquirer.js#readme
+
+## License
+This project is licensed under: [MIT](https://choosealicense.com/licenses/mit/)
 
 ## Questions
 
 For questions, please contact me:
 
-### GitHub: &nbsp;<small>[SunnyOhK](https://github.com/SunnyOhK)</small>
+### GitHub: 
+  #### [SunnyOhK](https://github.com/SunnyOhK)
 
-### Project Link: &nbsp;<small>https://github.com/SunnyOhK/a-README-worth-reading</small>
-### Email: &nbsp;<small>127900916+SunnyOhK@users.noreply.github.com</small>
-
-## License
-This project is licensed under: [MIT](https://choosealicense.com/licenses/mit/)
+### Project Link: 
+  #### https://github.com/SunnyOhK/a-README-worth-reading
+### Email: 
+  #### 127900916+SunnyOhK@users.noreply.github.com
