@@ -1,9 +1,9 @@
-# Title
+# Appy
 
-[![License](https://img.shields.io/badge/License-GPL_v3-blue.svg)](https://choosealicense.com/licenses/gpl-3.0)
+[![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](https://choosealicense.com/licenses/apache-2.0)
 
 ## Description
-does stuff
+It's super neato
 
 ## Table of Contents
 
@@ -17,32 +17,32 @@ does stuff
 
 ## Installation
 
-You can visit the Title live web application at: www.app.com
+You can visit the Appy live web application at: www.appysapps.com
 
 
-- none
+- ^Step 1 ^Step 2
 
 ## Usage
 
 
-- jklagnkjasg
-kla;sdgf
+- ^6 ^7 ^8
+![Image](assets\Trail4.png)
 
 
 ## Contributing
 
 
-- jhklga;
+- ajskdlgf
 
 ## Tests
 
 
-- jklga
+- hjkga
 
 ## Credits
 
 
-- jkla;dg
+- ^m ^m ^m
 
 ## Contact
 
@@ -50,7 +50,7 @@ For questions or to learn how you may contribute to this project, please contact
 
 ### Sunny
 
-### Project Link: https://github.com/undefined/sunny-app
+### Project Link: https://github.com/undefined/sunny-appy
 
 ## License
-This project is licensed under: [GPL v3](https://choosealicense.com/licenses/gpl-3.0)
+This project is licensed under: [Apache 2.0](https://choosealicense.com/licenses/apache-2.0)
