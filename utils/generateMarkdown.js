@@ -54,17 +54,22 @@ function renderLicenses(license) {
 }
 
 
-// TODO: Create a function that returns the license section of README
-// If there is no license, return an empty string
-// function renderLicenseMD(license) {
-//   if (license) {
-//     licenseMd = 'This product is licensed under:'
-//   } else {
-//     licenseMd = ''
-//   }
+function licenseTOC(license) {
+  if (license) {
+    return '- [License](#license)'
+  } else {
+    return ''
+  }
+}
 
-//   return licenseMd;
-// }
+
+function loadImg(img) {
+  if (img) {
+    return '![Image]'
+  } else {
+    return ''
+  }
+}
 
 
 
@@ -73,12 +78,14 @@ function generateMarkdown(data) {
   var licenses = renderLicenses(data.license);
   var badges = licenses.badge;
   var licenseSection = licenses.section;
+  var tableCont = licenseTOC(data.license);
   var install = data.install.replace(/^/g, '\n- ');
   var usage = data.usage.replace(/^/g, '\n- ');
   var credits = data.credits.replace(/^/g, '\n- ');
   var contributing = data.contributing.replace(/^/g, '\n- ');
   var tests = data.tests.replace(/^/g, '\n- ');
-  var img = data.img.replace(/~~/g, '\n<img src=${data.img}>');
+  // var break = data.img.replace(/~~/g, '\n');
+  var imgTag = loadImg(data.img);
 
   return `# ${data.title}
 
@@ -95,7 +102,7 @@ ${data.description}
 - [Tests](#tests)
 - [Credits](#credits)
 - [Contact](#contact)
-- [License](#license)
+${tableCont}
 
 ## Installation
 
@@ -106,7 +113,7 @@ ${install}
 ## Usage
 
 ${usage}
-${img}
+${imgTag}${data.img}
 
 
 ## Contributing
