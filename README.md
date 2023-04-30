@@ -1,6 +1,6 @@
 # A README Worth Reading
 
-[![License](https://img.shields.io/badge/License-MIT-yellow.svg)](https://choosealicense.com/licenses/mit)
+[![License](https://img.shields.io/badge/License-MIT-yellow.svg)](https://choosealicense.com/licenses/mit) [![Inquirer](https://img.shields.io/badge/Inquirer-v8.2.4-red.svg)](https://github.com/SBoudrias/Inquirer.js#readme)
 
 ## Description
 This is a command-line based application that generates a professional README.md file based on a user’s input. It utilizes Node.js and the Inquirer NPM package to initiate a series of prompted questions and render the responses into a well-formatted markdown file.
