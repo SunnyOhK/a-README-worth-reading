@@ -50,10 +50,10 @@ Please contact me for test instructions.
 
 For questions, please contact me:
 
-### GitHub: &nbsp;<small>[SunnyOhK](https://github.com/SunnyOhK)</small>
+### GitHub: <small>[SunnyOhK](https://github.com/SunnyOhK)</small>
 
-### Project Link: &nbsp;<small>https://github.com/SunnyOhK/a-README-worth-reading</small>
-### Email: &nbsp;<small>127900916+SunnyOhK@users.noreply.github.com</small>
+### Project Link: <small>https://github.com/SunnyOhK/a-README-worth-reading</small>
+### Email: <small>127900916+SunnyOhK@users.noreply.github.com</small>
 
 ## License
 This project is licensed under: [MIT](https://choosealicense.com/licenses/mit/)
