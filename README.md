@@ -29,14 +29,15 @@ Once installation has been completed, creating your professional README.md is a 
 - Open the integrated terminal from your primary project file and type ‘node filename.js’. 
 - Read the instructions to learn how to create bulleted lists and render an image. 
 - Follow all prompts and watch your README.md magically appear. 
-![Image](/assets/coming-soon.png)
+
+https://user-images.githubusercontent.com/127900916/235376574-8cfb0c7c-c2d3-459b-8486-c66be811806c.mp4
 
 
 ## Contributing
 
 [![Contributor Covenant](https://img.shields.io/badge/Contributor%20Covenant-2.1-4baaaa.svg)](code_of_conduct.md)
 
-## Tests
+## Testsproject-demo.mp4
 
 Please contact me for more information.
 
