@@ -44,21 +44,14 @@ function renderLicenses(license) {
 
       break;
     default:
-      badge = '';
-      section = '';
+      badge = '',
+      section = '',
+      toC = ''
   }
   return {
     badge: badge,
-    section: section
-  }
-}
-
-
-function licenseTOC(license) {
-  if (license = 'other/none') {
-    return ''
-  } else {
-    return '- [License](#license)'
+    section: section,
+    toC: '- [License](#license)'
   }
 }
 
@@ -71,6 +64,15 @@ function loadImg(img) {
   }
 }
 
+function generateContr(contributing) {
+  var ACC = '[![Contributor Covenant](https://img.shields.io/badge/Contributor%20Covenant-2.1-4baaaa.svg)](code_of_conduct.md)';
+
+  if (contributing.toUpperCase() === 'ACC') {
+    return ACC;
+  } else {
+    return 'contributing';
+  }
+}
 
 
 // TODO: Create a function to generate markdown for README
@@ -78,13 +80,13 @@ function generateMarkdown(data) {
   var licenses = renderLicenses(data.license);
   var badges = licenses.badge;
   var licenseSection = licenses.section;
-  var tableCont = licenseTOC(data.license);
+  var tableCont = licenses.toC;
   var install = data.install.replace(/~~/g, '\n- ');
   var usage = data.usage.replace(/~~/g, '\n- ');
   var credits = data.credits.replace(/~~/g, '\n- ');
-  var contributing = data.contributing.replace(/~~/g, '\n- ');
   var tests = data.tests.replace(/~~/g, '\n- ');
   var imgTag = loadImg(data.img);
+  var contributing = generateContr(data.contributing);
 
   return `# ${data.title}
 
@@ -117,8 +119,6 @@ ${imgTag}${data.img}
 
 ## Contributing
 
-[![Contributor Covenant](https://img.shields.io/badge/Contributor%20Covenant-2.1-4baaaa.svg)](code_of_conduct.md)
-
 ${contributing}
 
 ## Tests
@@ -129,11 +129,12 @@ ${tests}
 
 ${credits}
 
-## Contact
+## Questions
 
-For questions or to learn how you may contribute to this project, please contact me:\n
-### ${data.name}\n
-### Project Link: https://github.com/${data.username}/${data.repo}
+For questions, please contact me:\n
+### GitHub: &nbsp;<small>[${data.name}](https://github.com/${data.name})</small>\n
+### Project Link: &nbsp;<small>https://github.com/${data.name}/${data.repo}</small>
+### Email: &nbsp;<small>${data.email}</small>
 
 ${licenseSection}
 `
