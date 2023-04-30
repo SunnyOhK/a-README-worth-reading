@@ -55,10 +55,10 @@ function renderLicenses(license) {
 
 
 function licenseTOC(license) {
-  if (license) {
-    return '- [License](#license)'
-  } else {
+  if (license = 'other/none') {
     return ''
+  } else {
+    return '- [License](#license)'
   }
 }
 
@@ -79,11 +79,11 @@ function generateMarkdown(data) {
   var badges = licenses.badge;
   var licenseSection = licenses.section;
   var tableCont = licenseTOC(data.license);
-  var install = data.install.replace(/^/g, '\n- ');
-  var usage = data.usage.replace(/^/g, '\n- ');
-  var credits = data.credits.replace(/^/g, '\n- ');
-  var contributing = data.contributing.replace(/^/g, '\n- ');
-  var tests = data.tests.replace(/^/g, '\n- ');
+  var install = data.install.replace(/~~/g, '\n- ');
+  var usage = data.usage.replace(/~~/g, '\n- ');
+  var credits = data.credits.replace(/~~/g, '\n- ');
+  var contributing = data.contributing.replace(/~~/g, '\n- ');
+  var tests = data.tests.replace(/~~/g, '\n- ');
   var imgTag = loadImg(data.img);
 
   return `# ${data.title}
@@ -118,6 +118,7 @@ ${imgTag}${data.img}
 ## Contributing
 
 [![Contributor Covenant](https://img.shields.io/badge/Contributor%20Covenant-2.1-4baaaa.svg)](code_of_conduct.md)
+
 ${contributing}
 
 ## Tests
