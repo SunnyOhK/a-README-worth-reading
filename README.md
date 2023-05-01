@@ -27,6 +27,8 @@ Once installation has been completed, creating your professional README.md is a 
 - Open the integrated terminal from your primary project file and type ‘node filename.js’. 
 - Read the instructions to learn how to create bulleted lists and render an image. 
 - Follow all prompts and watch your README.md magically appear. 
+- Original demo video can be viewed here: https://drive.google.com/file/d/1vsFnjZIAg5e4AN_C0r4D5qYEYl-RfXHt/view
+- Similar video recorded locally for usage walkthrough:
 
 https://user-images.githubusercontent.com/127900916/235377788-c482d319-cc2d-4664-a2a1-416c694b7664.mp4
 
