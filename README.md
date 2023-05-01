@@ -1,6 +1,6 @@
 # A README Worth Reading
 
-[![License](https://img.shields.io/badge/License-MIT-yellow.svg)](https://choosealicense.com/licenses/mit) [![Inquirer](https://img.shields.io/badge/Inquirer-v8.2.4-red.svg)](https://github.com/SBoudrias/Inquirer.js#readme) [![JavaScript](https://img.shields.io/badge/JavaScript-323330?style=for-the-badge&logo=javascript&logoColor=F7DF1E)](https://dev.to/envoy_/150-badges-for-github-pnk#contact) [![Node.js](https://img.shields.io/badge/Node.js-43853D?style=for-the-badge&logo=node.js&logoColor=white)](https://dev.to/envoy_/150-badges-for-github-pnk#contact) [![Markdown](https://img.shields.io/badge/Node.js-43853D?style=for-the-badge&logo=node.js&logoColor=white)](	https://img.shields.io/badge/Markdown-000000?style=for-the-badge&logo=markdown&logoColor=white) 
+[![License](https://img.shields.io/badge/License-MIT-yellow.svg)](https://choosealicense.com/licenses/mit) [![Inquirer](https://img.shields.io/badge/Inquirer-v8.2.4-red.svg)](https://github.com/SBoudrias/Inquirer.js#readme) 
 
 ## Description
 This is a command-line based application that generates a professional README.md file based on a user’s input. It utilizes Node.js and the Inquirer NPM package to initiate a series of prompted questions and render the responses into a well-formatted markdown file.
